@@ -2,7 +2,7 @@ use rayon::prelude::*;
 use std::fs;
 use std::path::{Path, PathBuf};
 
-mod preprocessors;
+pub mod preprocessors;
 
 #[derive(thiserror::Error, Debug)]
 pub enum Error {
