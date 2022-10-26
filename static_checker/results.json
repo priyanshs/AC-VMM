@@ -1,0 +1,43 @@
+{
+  "data": [
+    {
+      "checker_result": [
+        {
+          "similarity_score": 0.2992700729927007,
+          "target_name": "./src/test/2.rs"
+        },
+        {
+          "similarity_score": 0.0,
+          "target_name": "./src/test/3.rs"
+        }
+      ],
+      "source_name": "./src/test/1.rs"
+    },
+    {
+      "checker_result": [
+        {
+          "similarity_score": 0.2992700729927007,
+          "target_name": "./src/test/1.rs"
+        },
+        {
+          "similarity_score": 0.0,
+          "target_name": "./src/test/3.rs"
+        }
+      ],
+      "source_name": "./src/test/2.rs"
+    },
+    {
+      "checker_result": [
+        {
+          "similarity_score": 0.0,
+          "target_name": "./src/test/1.rs"
+        },
+        {
+          "similarity_score": 0.0,
+          "target_name": "./src/test/2.rs"
+        }
+      ],
+      "source_name": "./src/test/3.rs"
+    }
+  ]
+}
