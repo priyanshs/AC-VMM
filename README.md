@@ -33,7 +33,7 @@ The project implementation focuses on the second and third  stages.
 - [ ] Integration with the backend system
 ### Dynamic Check 
 - [ ] Implementation using gdb 
-- [ ] Time taken to run the student code 
+- [x] Time taken to run the student code 
 - [ ] Grading with the TA script
 - [ ] Integration with the backend system
 ### Student Parameters 
