@@ -4,4 +4,4 @@ import sys
 import os 
 
 grade_path = "student-code/grading"
-os.system("autograder run " + os.path.abspath(grade_path) + "/")
+os.system("python student-code/run.py")
