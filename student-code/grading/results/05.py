@@ -4,16 +4,16 @@ TestCase                                Result
 ================================================================
 test1.py                                Crashed due to signal 1:
 Traceback (most recent call last):
-  File "/tmp/tmpw9g7n_hc/test1.py", line 46, in <module>
-  File "/tmp/tmpw9g7n_hc/test1.py", line 40, in main
+  File "/tmp/tmpdt9v4mvr/test1.py", line 46, in <module>
+  File "/tmp/tmpdt9v4mvr/test1.py", line 40, in main
   File ".../05.py", line 2, in reachNumber
 NameError: name 'v1' is not defined
 
 
 test2.py                                Crashed due to signal 1:
 Traceback (most recent call last):
-  File "/tmp/tmpw9g7n_hc/test2.py", line 47, in <module>
-  File "/tmp/tmpw9g7n_hc/test2.py", line 40, in main
+  File "/tmp/tmpdt9v4mvr/test2.py", line 47, in <module>
+  File "/tmp/tmpdt9v4mvr/test2.py", line 40, in main
   File ".../05.py", line 2, in reachNumber
 NameError: name 'v1' is not defined
 

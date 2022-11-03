@@ -21,4 +21,6 @@ for root, dirs, files in os.walk(movdir):
         new_name = os.path.join(basedir, file_n)
         shutil.copy(old_name, new_name)
 
-basedir = "grading"
+# basedir = "student-code/grading"
+# print(os.path.abspath(basedir))
+# os.system("autograder run " + os.path.abspath(basedir) + "/")
