@@ -25,8 +25,8 @@ The project implementation focuses on the second and third  stages.
 
 ## Task Lists 
 ### General Scripts 
-- [ ] Setup Scripts for making the MYSQL database
-- [ ] Control Program 
+- [x] Setup Scripts for making the MYSQL database
+- [x] Control Program 
 - [ ] Analysis of collected metrics
 ### Plagerism Check
 - [x] Static Checker in Rust 

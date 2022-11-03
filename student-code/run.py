@@ -51,3 +51,7 @@ for root, dirs, files in os.walk(scorepath):
 
 mydb.commit()
 
+
+# [] Add code to make a copy of the folder 
+# [] read json 
+# [] commit it to mysql
