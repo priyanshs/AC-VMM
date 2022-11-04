@@ -30,11 +30,11 @@ The project implementation focuses on the second and third  stages.
 - [ ] Analysis of collected metrics
 ### Plagerism Check
 - [x] Static Checker in Rust 
-- [ ] Integration with the backend system
+- [x] Integration with the backend system
 ### Dynamic Check 
 - [ ] Implementation using gdb 
 - [x] Time taken to run the student code 
-- [ ] Grading with the TA script
+- [x] Grading with the TA script
 - [ ] Integration with the backend system
 ### Student Parameters 
 - [ ] Installing version control system 
