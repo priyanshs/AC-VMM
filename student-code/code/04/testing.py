@@ -1,3 +1,5 @@
+from math import ceil,sqrt
+
 def reachNumber(target):
     target = abs(target)
     n = ceil(sqrt(2*target)-1) # n = 1 gives O(sqrt(target)) solution

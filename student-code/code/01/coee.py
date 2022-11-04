@@ -1,3 +1,4 @@
+import math
 def reachNumber(target):
     target = abs(target)
     n = int(math.ceil((math.sqrt(8 * target + 1) - 1) / 2)) # solve inequation: n * (n + 1) / 2 >= target

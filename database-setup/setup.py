@@ -13,7 +13,7 @@ mydb = mysql.connector.connect(
 )
 
 mycursor = mydb.cursor()
-mycursor.execute("CREATE DATABASE mydatabase")
+# mycursor.execute("CREATE DATABASE mydatabase")
 mycursor.execute("USE mydatabase")
 mydb.database = "mydatabase"
 mycursor = mydb.cursor()
