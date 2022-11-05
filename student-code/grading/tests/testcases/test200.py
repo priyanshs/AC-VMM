@@ -1,7 +1,8 @@
 def main():
 	flag = true
-	res = student_submission.reachNumber(8828995)
-	if res == 8828995:
+	res = student_submission.reachNumber(6781273)
+	if res == 6781273:
 		PASS()
 	else:
 		FAIL()
+main()

@@ -5,3 +5,4 @@ def main():
 		PASS()
 	else:
 		FAIL()
+main()
