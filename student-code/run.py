@@ -4,20 +4,35 @@ import mysql.connector
 import json
 import math
 
-assign_id = 1
+assign_id = "1"
 max_plag = 20
 ulimit_no_of_logins = 10
-ulimit_time = ulimit_no_of_logins * 600
+ulimit_time = ulimit_no_of_logins * 1200
 
 llimit_no_of_logins = 1
 llimit_time = llimit_no_of_logins * 300
 
 mydb = mysql.connector.connect(
   host="localhost",
-  user="root",
-  password="",
-  database="mydatabase",
+  user="gautam",
+  password="password",
+  database="App",
 )
+
+# {
+#     "host":"localhost",
+#     "port":"3306",
+#     "username":"gautam",
+#     "password":"password",
+#     "database":"App"
+# }
+
+# mydb = mysql.connector.connect(
+#   host="localhost",
+#   user="root",
+#   password="",
+#   database="mydatabase",
+# )
 
 # os.system("mkdir grading")
 # os.system("mkdir grading/testing")
@@ -127,7 +142,7 @@ for student in student_list:
     mycursor.execute("SELECT static_dist, marks FROM student_activity WHERE entry_no = "+ student+ "AND assignment_id = "+assign_id+";")
     # mycursor.execute("SELECT time_vm, no_launches, static_dist, marks FROM grading WHERE s_id = "+ student+ ";")
     x = [i for i in mycursor]
-    mycursor.execute("SELECT time from student_activity where student_activity WHERE entry_no = "+ student+ "AND assignment_id = "+assign_id+" ORDER BY time DESC;")
+    mycursor.execute("SELECT time from student_activity WHERE entry_no = "+ student+ "AND assignment_id = "+assign_id+" ORDER BY time DESC;")
     y = [i for i in mycursor]
     for i in range(len(y)): 
         if i % 2 : 
