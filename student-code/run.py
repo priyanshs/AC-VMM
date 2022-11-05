@@ -4,8 +4,8 @@ import mysql.connector
 import json
 import math
 
-
-
+assign_id = 1
+max_plag = 20
 ulimit_no_of_logins = 10
 ulimit_time = ulimit_no_of_logins * 600
 
@@ -72,9 +72,11 @@ for i in data['data']:
             relative_plag[comp_to] = curr_score
 
 for i in relative_plag:
-    upp = "UPDATE grading SET static_dist = "+str(relative_plag[i])+" WHERE s_id = "+ i+ ";"
+    # upp = "UPDATE grading SET static_dist = "+str(relative_plag[i])+" WHERE s_id = "+ i+ ";"
+    upp = "UPDATE student_activity SET static_dist = "+str(relative_plag[i])+" WHERE entry_no = "+ i+ " AND assignment_id = "+assign_id+";"
     mycursor.execute(upp)
     
+
 f.close()
 
 relative_plag = {i:0 for i in student_list} 
@@ -82,7 +84,9 @@ f = open('time')
 for line in f:
     student_id, time = line.split(',')
     time = str(int(time)/100000)
-    upp = "UPDATE grading SET grading_time = "+time+" WHERE s_id = "+ student_id + ";"
+    # upp = "UPDATE grading SET grading_time = "+time+" WHERE s_id = "+ student_id + ";"
+    upp = "UPDATE student_activity SET grading_time = "+time+" WHERE entry_no = "+ student_id + "AND assignment_id = "+assign_id+";"
+
     mycursor.execute(upp)
     
 f.close()
@@ -110,28 +114,39 @@ for root, dirs, files in os.walk(scorepath):
                 word = 'Result:'
                 if row.find(word) != -1:
                     # print(filename)
-                    upp = "UPDATE grading SET marks = "+row.split()[1].split('/')[0]+" WHERE s_id = "+ filename.split('.')[0]+";"
+                    # upp = "UPDATE grading SET marks = "+row.split()[1].split('/')[0]+" WHERE s_id = "+ filename.split('.')[0]+";"
+                    upp = "UPDATE student_activity SET marks = "+row.split()[1].split('/')[0]+" WHERE entry_no = "+ filename.split('.')[0]+ "AND assignment_id = "+assign_id+";"
                     mycursor.execute(upp)
 
 mydb.commit()
 
 
+
 for student in student_list: 
     cheat = "0"
-    mycursor.execute("SELECT time_vm, no_launches, static_dist, marks FROM grading WHERE s_id = "+ student+ ";")
+    mycursor.execute("SELECT static_dist, marks FROM student_activity WHERE entry_no = "+ student+ "AND assignment_id = "+assign_id+";")
+    # mycursor.execute("SELECT time_vm, no_launches, static_dist, marks FROM grading WHERE s_id = "+ student+ ";")
     x = [i for i in mycursor]
-    
+    mycursor.execute("SELECT time from student_activity where student_activity WHERE entry_no = "+ student+ "AND assignment_id = "+assign_id+" ORDER BY time DESC;")
+    y = [i for i in mycursor]
+    for i in range(len(y)): 
+        if i % 2 : 
+            time = time - y[i][0]
+        else: 
+            time = time + y[i][0]    
+    vm_count = len(y)//2 
         
     
-    if x[0][0] < llimit_time: 
+    if time < llimit_time: 
         cheat = "1"
-    elif x[0][0] > ulimit_time: 
+    elif time > ulimit_time: 
         cheat = "1"
-    elif llimit_time < x[0][0] / x[0][1] < ulimit_time and x[0][2] < max_plag:  
+    elif llimit_time < time/ vm_count < ulimit_time and x[0][0] < max_plag:  
         cheat = "0"
     else: 
         cheat = "1"
 
-    mycursor.execute("UPDATE grading SET cheat_label = "+ cheat + " WHERE s_id = "+ student+ ";")
+    mycursor.execute("UPDATE student_activity SET cheat_label = "+ cheat + " WHERE entry_no = "+ student+  "AND assignment_id = "+assign_id+";")
+    # mycursor.execute("UPDATE grading SET cheat_label = "+ cheat + " WHERE s_id = "+ student+ ";")
 mydb.commit()
 # UPDATE grading SET cheat_label = 1 WHERE s_id = 2
