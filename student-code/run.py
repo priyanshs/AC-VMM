@@ -4,16 +4,26 @@ import mysql.connector
 import json
 import math
 
-# os.system("mkdir grading")
-# os.system("mkdir grading/testing")
-# os.system("mkdir grading/testing/input")
-# os.system("mkdir grading/testing/output")
+
+
+ulimit_no_of_logins = 10
+ulimit_time = ulimit_no_of_logins * 600
+
+llimit_no_of_logins = 1
+llimit_time = llimit_no_of_logins * 300
+
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
   password="",
   database="mydatabase",
 )
+
+# os.system("mkdir grading")
+# os.system("mkdir grading/testing")
+# os.system("mkdir grading/testing/input")
+# os.system("mkdir grading/testing/output")
+
 mycursor = mydb.cursor()
 
 student_list = []
@@ -106,6 +116,22 @@ for root, dirs, files in os.walk(scorepath):
 mydb.commit()
 
 
-# [] Add code to make a copy of the folder 
-# [] read json 
-# [] commit it to mysql
+for student in student_list: 
+    cheat = "0"
+    mycursor.execute("SELECT time_vm, no_launches, static_dist, marks FROM grading WHERE s_id = "+ student+ ";")
+    x = [i for i in mycursor]
+    
+        
+    
+    if x[0][0] < llimit_time: 
+        cheat = "1"
+    elif x[0][0] > ulimit_time: 
+        cheat = "1"
+    elif llimit_time < x[0][0] / x[0][1] < ulimit_time and x[0][2] < max_plag:  
+        cheat = "0"
+    else: 
+        cheat = "1"
+
+    mycursor.execute("UPDATE grading SET cheat_label = "+ cheat + " WHERE s_id = "+ student+ ";")
+mydb.commit()
+# UPDATE grading SET cheat_label = 1 WHERE s_id = 2
