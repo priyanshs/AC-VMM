@@ -1,6 +1,6 @@
 def main():
-	res = student_submission.reachNumber(10)
-	if res == 10:
+	res = student_submission.reachNumber(-8907)
+	if res == 133:
 		PASS()
 	else:
 		FAIL()
