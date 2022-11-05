@@ -27,23 +27,23 @@ The project implementation focuses on the second and third  stages.
 ### General Scripts 
 - [x] Setup Scripts for making the MYSQL database
 - [x] Control Program 
-- [ ] Analysis of collected metrics
+- [x] Analysis of collected metrics
 ### Plagerism Check
 - [x] Static Checker in Rust 
 - [x] Integration with the backend system
 ### Dynamic Check 
-~~ - [ ] Implementation using gdb ~~
+- [-] Implementation using gdb 
 - [x] Time taken to run the student code 
 - [x] Grading with the TA script
-- [ ] Integration with the backend system
+- [x] Integration with the backend system
 ### Student Parameters 
-~~ - [ ] Installing version control system ~~
-- [ ] Recomiling the OS with custom code 
-- [ ] Integrating with SSH/VS code system
-- [ ] Integrating with backend system 
+- [-] Installing version control system 
+- [-] Recomiling the OS with custom code 
+- [x] Integrating with SSH/VS code system 
+- [x] Integrating with backend system
 
 ### Future Additions 
-~~ - [ ] Integration with MOSS ~~
+- [-] Integration with MOSS 
 
 ## Team Members
 Priyansh Singh, Jayant Mishra, Kshitij, Satyam Modi, Arka Mandal and Abhijith
