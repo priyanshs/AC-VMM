@@ -11,16 +11,13 @@ mydb = mysql.connector.connect(
 
 table_schema ="""CREATE TABLE `grading` (
 	`s_id` INT,
-	`vm_id` INT,
-	`assign_id` INT,
+
 	`time_vm` INT,
 	`no_launches` INT,
-	`activity_1` INT,
-	`activity_2` INT,
-	`activity_3` INT,
+
 	`static_dist` INT,
 	`grading_time` INT,
-	`dynamic_dist` INT,
+
 	`cheat_label` INT,
 	`marks` INT,        
  	PRIMARY KEY (`s_id`,`assign_id`)
