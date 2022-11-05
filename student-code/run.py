@@ -33,10 +33,20 @@ for root, dirs, files in os.walk(movdir):
         shutil.copy(old_name, new_name)
 
 
+
+
 os.system("mkdir student-code/static")
 os.system("cp student-code/grading/*.py student-code/static/")
+
+with open('./submissions', 'w') as fp:
+    fp.write('\n'.join(student_list))
+
+os.system("cp ./student-code/pyTime ./student-code/static/")
+
+os.system("./student-code/static/pyTime ")
+os.system("rm ./student-code/static/pyTime")
 os.system("./student-code/static_checker student-code/static")
-os.system("rm -r student-code/static")
+
 
 relative_plag = {i:0 for i in student_list} 
 f = open('results.json')
@@ -56,6 +66,20 @@ for i in relative_plag:
     mycursor.execute(upp)
     
 f.close()
+
+relative_plag = {i:0 for i in student_list} 
+f = open('time')
+for line in f:
+    student_id, time = line.split(',')
+    time = str(int(time)/100000)
+    upp = "UPDATE grading SET grading_time = "+time+" WHERE s_id = "+ student_id + ";"
+    mycursor.execute(upp)
+    
+f.close()
+
+
+os.system("rm -r student-code/static")
+os.system("rm results.json time submissions")
 
 basedir = "student-code/grading"
 # print(os.path.abspath(basedir))
