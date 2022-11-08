@@ -1,4 +1,4 @@
-# 754. Reach a Number
+# Left Right Left
 
 You are standing at position 0 on an infinite number line. There is a destination at position target.
 
@@ -33,8 +33,9 @@ On the 2nd move, we step from 1 to 3 (2 steps).
 
 _Constraints:_
 
-    -109 <= target <= 109
-    target != 0
+-10<sup>9</sup> <= target <= 10<sup>9</sup>
+
+target != 0
 
 
 _Function Template:_
@@ -43,3 +44,5 @@ def reachNumber (num):
     # code goes here 
     return solution
 ```
+
+Note that, you don't have to call any function in your code. Just the declaration of the above function.
