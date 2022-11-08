@@ -10,6 +10,8 @@ You can make some number of moves numMoves so that:
 Given the integer target, return the minimum number of moves required (i.e., the minimum numMoves) to reach the destination.
 
  
+The integer shall be provided to you as part of function call to your function `reachNumber`. You need to return the number of moves to reach the destination.
+
 _Example 1:_
 
 Input: target = 2
@@ -34,3 +36,8 @@ _Constraints:_
     -109 <= target <= 109
     target != 0
 
+
+_Function Template:_
+def reachNumber (num): 
+    # code goes here 
+    return solution
