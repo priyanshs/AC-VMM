@@ -38,6 +38,8 @@ _Constraints:_
 
 
 _Function Template:_
+```python
 def reachNumber (num): 
     # code goes here 
     return solution
+```
