@@ -1,3 +1,5 @@
+This repository is part of the course project for COL-729 @ IIT Delhi
+--- 
 # Anti-Cheating Implementation within a Virtualized Learning Environment
 
 This document highlights the Objectives and Key Results for the Anti-Cheating within a Virtualized Learning Environment. The module will focus on monitoring the student activity and analysis of the submission. The prior focuses on working with the hypervisor to log student logins and file activity. While the latter focuses mainly on submission comparison and run-time characteristics like cycles used and resources accessed. Based on the threshold set by the TA or instructor previously each submission is checked and tagged for deceptive activity. 
